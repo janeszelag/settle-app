@@ -11,20 +11,21 @@ import {
 import { useHover, useFocus, useActive } from 'react-native-web-hooks'
 
 const Button = ({ children, variant, onPress, mode }) => {
+
     const ref = useRef(null);
     const [isPressed, setIsPressed] = useState(false)
     const windowWidth = useWindowDimensions().width
     const isFocused = useFocus(ref)
     const isHover = useHover(ref)
     const isActive = useActive(ref)
+
+
+    const pressBackground = mode === 'dark' ? lightGunmetal : lightCedarChest
+    const modeColor = mode === 'dark' ? gunmetal : cedarChest
+
     const findWidth = () => {
         return windowWidth <= 768 ? { width: '100%' } : { width: 180 }
     }
-
-    let pressBackground
-    const modeColor = mode === 'dark' ? gunmetal : cedarChest
-
-
 
     const getTextStyles = (variant, mode) => {
         const textColor = mode === 'dark' ? gunmetal : cedarChest
@@ -47,18 +48,16 @@ const Button = ({ children, variant, onPress, mode }) => {
 
     const getWebStyles = (variant) => {
         if (Platform.OS !== 'web') return
-        pressBackground = mode === 'dark' ? lightGunmetal : lightCedarChest
         if (variant === 'outline') {
             return {
                 cursor: 'pointer',
                 boxShadow: isFocused && `0 0 0 0, 0 0 0 0.125rem ${white} inset, 0 0 0 0.1875rem ${modeColor} inset`,
-                transition: 'all 0.1s ease-in-out',
+                transition: 'all 0.2s ease-in-out',
                 borderWidth: isHover || isFocused ? '0.125rem' : 1
             }
         } else {
             return {
                 cursor: 'pointer',
-                transition: 'all 0.2s ease-in-out',
                 backgroundColor: isHover || isPressed ? (isActive ? pressBackground : white) : modeColor,
                 borderColor: modeColor,
                 borderWidth: isHover || isFocused ? '0.125rem' : 1,
@@ -69,7 +68,6 @@ const Button = ({ children, variant, onPress, mode }) => {
 
     const getVariant = (variant, mode) => {
         if (variant === 'outline') {
-            pressBackground = mode === 'dark' ? lightGunmetal : lightCedarChest
             return {
                 backgroundColor: isPressed ? pressBackground : white,
                 borderColor: modeColor,
@@ -110,7 +108,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
 
-});
+})
 
 export default Button
 
