@@ -6,6 +6,11 @@ This repo is a WIP 🔨 cross-platform native application/progressive web app ma
 
 - Aiming to keep track of technical decisions/things I learn along the way here
 
+### 10/27/2020 🍁
+
+- Tried refactoring with `styled components` but some of the functionality was lost when it came to the hooks from react-native-web-hooks (which I am using to create pseudo class styles for the buttons when on web), their examples use the `StyleSheet API` and I suspect the `useHover` ect. are not working properly with the `styled components`, the state is not being updated somehow...or maybe I am passing things in the wrong way...will mull it over
+- For future components that are simpler or don't have web specific styles I could try again
+
 ### 10/26/2020 🍁
 
 - Continued styling `Button`, including web specific styles
