@@ -10,7 +10,7 @@ This repo is a WIP 🔨 cross-platform native application/progressive web app ma
 
 - Initialized the project using expo's guide, using npm instead of yarn
 - Plan on making a small UI library first to practise my front-end skills/better learn react native
-- Will be using Storybook to develop my components: followed the [expo guide](https://github.com/expo/examples/tree/master/with-storybook) on using Storybook
+- Will be using Storybook to develop my components, followed the [expo guide](https://github.com/expo/examples/tree/master/with-storybook) on using Storybook
 - Decided to go with the first option in the guide: running it via Storybook CLI (versus expo CLI), chose this as I am more familiar with Storybook-React as oppose to Storybook-React native
 - Will see how this plays out when I add web support as I have yet to do that
 - Had to install `@core.js` as a devDependency which was not in the docs 👀 (maybe they assume I've already added web support)

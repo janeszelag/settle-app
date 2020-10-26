@@ -6,12 +6,20 @@ import Button from "./src/components/Button"
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Button variant='outline' mode='dark'>
-        I'm pressable
-      </Button>
-      <Button mode='dark'>I'm pressable</Button>
-      <Button>I'm pressable</Button>
+      <View style={styles.box}>
+        <Button variant='outline' mode='dark'>
+          I'm pressable
+        </Button>
+      </View>
+      <View style={styles.box}>
+        <Button variant='outline'>I'm pressable</Button>
+      </View>
+      <View style={styles.box}>
+        <Button mode='dark'>I'm pressable</Button>
+      </View>
+      <View style={styles.box}>
+        <Button>I'm pressable</Button>
+      </View>
       <StatusBar style='auto' />
     </View>
   )
@@ -20,6 +28,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 10,
+  },
+  box: {
+    width: "60%",
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
