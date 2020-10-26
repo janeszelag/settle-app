@@ -10,6 +10,13 @@ This repo is a WIP 🔨 cross-platform native application/progressive web app ma
 
 - Tried refactoring with `styled components` but some of the functionality was lost when it came to the hooks from react-native-web-hooks (which I am using to create pseudo class styles for the buttons when on web), their examples use the `StyleSheet API` and I suspect the `useHover` ect. are not working properly with the `styled components`, the state is not being updated somehow...or maybe I am passing things in the wrong way...will mull it over
 - For future components that are simpler or don't have web specific styles I could try again
+- Set up jest following expo's guide and ran into a problem, kept getting `SyntaxError: Cannot use import statement outside a module`
+- After trying out a few different online solutionseventually figured out that it was because my Button file was `.jsx` 💀🤢, folled [this article](https://levelup.gitconnected.com/setting-up-jest-under-expo-to-work-with-jsx-files-ba35a51bc25a) and added a transform to my jest configuration...I have always used `.jsx` when developing in react so I found this all very weird and annoying
+- Added a `npm run test:u` script that removes old snapshots
+- Added `Prop Types` to `Button` also
+- Ready to move onto making basic `card`, `heading` and `paragraph` components...need to start looking at how to load fonts and icons using expo
+- Might start looking into an already built component libary like UI kittens (not native paper bc it sucks), will have to theme them though
+- I also want to create a bottom nav component with `react-navigation`....I think I am still confused on how that would work on web...need to read up on this more, would I have a seperate nav for web? can it use navigation orrrrr?
 
 ### 10/26/2020 🍁
 
