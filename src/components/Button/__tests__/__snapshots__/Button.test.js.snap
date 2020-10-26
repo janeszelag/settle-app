@@ -1,0 +1,258 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> renders 1`] = `
+<View
+  accessibilityRole="button"
+  accessible={true}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderRadius": 6,
+        "height": 48,
+        "justifyContent": "center",
+        "padding": 6,
+      },
+      Object {
+        "width": "100%",
+      },
+      Object {
+        "backgroundColor": "#c8553d",
+        "opacity": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 16,
+        },
+        Object {
+          "color": "#ffffff",
+        },
+      ]
+    }
+  >
+    Text Button
+  </Text>
+</View>
+`;
+
+exports[`<Button /> renders a filled variant in gunmetal 1`] = `
+<View
+  accessibilityRole="button"
+  accessible={true}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderRadius": 6,
+        "height": 48,
+        "justifyContent": "center",
+        "padding": 6,
+      },
+      Object {
+        "width": "100%",
+      },
+      Object {
+        "backgroundColor": "#c8553d",
+        "opacity": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 16,
+        },
+        Object {
+          "color": "#ffffff",
+        },
+      ]
+    }
+  >
+    Text Button
+  </Text>
+</View>
+`;
+
+exports[`<Button /> renders a filled variant with the default colour as 'orange' 1`] = `
+<View
+  accessibilityRole="button"
+  accessible={true}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderRadius": 6,
+        "height": 48,
+        "justifyContent": "center",
+        "padding": 6,
+      },
+      Object {
+        "width": "100%",
+      },
+      Object {
+        "backgroundColor": "#c8553d",
+        "opacity": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 16,
+        },
+        Object {
+          "color": "#ffffff",
+        },
+      ]
+    }
+  >
+    Text Button
+  </Text>
+</View>
+`;
+
+exports[`<Button /> renders an outline variant in gunmetal 1`] = `
+<View
+  accessibilityRole="button"
+  accessible={true}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderRadius": 6,
+        "height": 48,
+        "justifyContent": "center",
+        "padding": 6,
+      },
+      Object {
+        "width": "100%",
+      },
+      Object {
+        "backgroundColor": "#ffffff",
+        "borderColor": "#293241",
+        "borderWidth": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 16,
+        },
+        Object {
+          "color": "#293241",
+        },
+      ]
+    }
+  >
+    Text Button
+  </Text>
+</View>
+`;
+
+exports[`<Button /> renders an outline variant with the default colour as 'orange' 1`] = `
+<View
+  accessibilityRole="button"
+  accessible={true}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderRadius": 6,
+        "height": 48,
+        "justifyContent": "center",
+        "padding": 6,
+      },
+      Object {
+        "width": "100%",
+      },
+      Object {
+        "backgroundColor": "#ffffff",
+        "borderColor": "#c8553d",
+        "borderWidth": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 16,
+        },
+        Object {
+          "color": "#c8553d",
+        },
+      ]
+    }
+  >
+    Text Button
+  </Text>
+</View>
+`;

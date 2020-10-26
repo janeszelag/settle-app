@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { useWindowDimensions, Pressable, StyleSheet, Text, Platform } from 'react-native'
+import PropTypes from 'prop-types'
 import {
     gunmetal,
     white,
@@ -7,10 +8,10 @@ import {
     lightCedarChest,
     lightGunmetal,
     darkCedarChest
-} from '../styles/colors'
+} from '../../styles/colors'
 import { useHover, useFocus, useActive } from 'react-native-web-hooks'
 
-const Button = ({ children, variant, onPress, mode }) => {
+const Button = ({ children, variant, onPress, colour }) => {
 
     const ref = useRef(null);
     const [isPressed, setIsPressed] = useState(false)
@@ -20,16 +21,16 @@ const Button = ({ children, variant, onPress, mode }) => {
     const isActive = useActive(ref)
 
 
-    const pressBackground = mode === 'dark' ? lightGunmetal : lightCedarChest
-    const modeColor = mode === 'dark' ? gunmetal : cedarChest
+    const pressBackground = colour === 'dark' ? lightGunmetal : lightCedarChest
+    const modeColor = colour === 'dark' ? gunmetal : cedarChest
 
     const findWidth = () => {
         return windowWidth <= 768 ? { width: '100%' } : { width: 180 }
     }
 
-    const getTextStyles = (variant, mode) => {
-        const textColor = mode === 'dark' ? gunmetal : cedarChest
-        const pressColor = mode === 'dark' ? gunmetal : darkCedarChest
+    const getTextStyles = (variant, colour) => {
+        const textColor = colour === 'dark' ? gunmetal : cedarChest
+        const pressColor = colour === 'dark' ? gunmetal : darkCedarChest
         if (Platform.OS === 'web') {
             return {
                 color: variant === 'outline' ?
@@ -66,7 +67,7 @@ const Button = ({ children, variant, onPress, mode }) => {
         }
     }
 
-    const getVariant = (variant, mode) => {
+    const getVariant = (variant, colour) => {
         if (variant === 'outline') {
             return {
                 backgroundColor: isPressed ? pressBackground : white,
@@ -75,7 +76,7 @@ const Button = ({ children, variant, onPress, mode }) => {
             }
         } else {
             return {
-                backgroundColor: mode === 'dark' ? gunmetal : cedarChest,
+                backgroundColor: colour === 'dark' ? gunmetal : cedarChest,
                 opacity: isPressed && Platform.OS !== 'web' ? 0.85 : 1
             }
         }
@@ -89,8 +90,8 @@ const Button = ({ children, variant, onPress, mode }) => {
             onPressIn={() => setIsPressed(true)}
             ref={ref}
             accessibilityRole="button"
-            style={[styles.wrapperCustom, findWidth(), getVariant(variant, mode), getWebStyles(variant)]}>
-            <Text style={[styles.text, getTextStyles(variant, mode)]}>{children}</Text>
+            style={[styles.wrapperCustom, findWidth(), getVariant(variant, colour), getWebStyles(variant)]}>
+            <Text style={[styles.text, getTextStyles(variant, colour)]}>{children}</Text>
         </Pressable>
     )
 
@@ -109,6 +110,25 @@ const styles = StyleSheet.create({
     },
 
 })
+
+Button.propTypes = {
+    /**
+     * The style.
+     */
+    variant: PropTypes.oneOf(['outline', 'filled']),
+    /**
+     * The colour.
+     */
+    colour: PropTypes.oneOf(['dark', 'orange']),
+    /**
+     * The label.
+     */
+    children: PropTypes.string.isRequired,
+}
+Button.defaultProps = {
+    variant: 'filled',
+    colour: 'orange'
+}
 
 export default Button
 

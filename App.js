@@ -1,13 +1,13 @@
 import { StatusBar } from "expo-status-bar"
 import React from "react"
 import { StyleSheet, Text, View } from "react-native"
-import Button from "./src/components/Button"
+import { Button } from "./src/components"
 
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.box}>
-        <Button variant='outline' mode='dark'>
+        <Button variant='outline' colour='dark'>
           I'm pressable
         </Button>
       </View>
@@ -15,7 +15,7 @@ export default function App() {
         <Button variant='outline'>I'm pressable</Button>
       </View>
       <View style={styles.box}>
-        <Button mode='dark'>I'm pressable</Button>
+        <Button colour='dark'>I'm pressable</Button>
       </View>
       <View style={styles.box}>
         <Button>I'm pressable</Button>
