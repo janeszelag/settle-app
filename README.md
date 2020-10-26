@@ -16,7 +16,7 @@ This repo is a WIP 🔨 cross-platform native application/progressive web app ma
 - Continued styling `Button`, including web specific styles
 - React Native StyleSheet API has no concept of hover, active, visited, focused, used a library called [react-native-web-hooks](https://www.npmjs.com/package/react-native-web-hooks) to create pseudo class styles (via [this guide](https://blog.expo.io/css-pseudo-class-effects-in-expo-for-web-56649f88eb6b)), seems to be working great 😀
 - Before moving onto tests, I think I will try to refactor Button using `styled components` as expo is suppose to support them (and I love them💕)
-- Also want to add more accessibilty in RN/understand how it works with `Pressable`
+- Also want to add more accessibilty/understand how it works with `Pressable` and RN in general
 - Will need to install an android emulator to check styles on andriod since my own phone is iOS, not sure if it is worth installing an iOS simulator though...
 - After installed I want to look at the `android_ripple` prop in `Pressable`
 
