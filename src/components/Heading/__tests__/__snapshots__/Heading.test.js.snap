@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Heading /> renders an h1 level heading 1`] = `
+<Text
+  level="h1"
+  style={
+    Array [
+      Object {
+        "color": "#293241",
+        "fontSize": 44,
+        "fontWeight": "bold",
+      },
+    ]
+  }
+>
+  Heading h1
+</Text>
+`;
+
+exports[`<Heading /> renders an h2 level heading 1`] = `
+<Text
+  level="h2"
+  style={
+    Array [
+      Object {
+        "color": "#293241",
+        "fontSize": 28,
+        "fontWeight": "bold",
+      },
+    ]
+  }
+>
+  Heading h2
+</Text>
+`;
+
+exports[`<Heading /> renders an h3 level heading 1`] = `
+<Text
+  level="h3"
+  style={
+    Array [
+      Object {
+        "color": "#293241",
+        "fontSize": 20,
+        "fontWeight": "bold",
+      },
+    ]
+  }
+>
+  Heading h3
+</Text>
+`;
+
+exports[`<Heading /> renders an h4 level heading 1`] = `
+<Text
+  level="h4"
+  style={
+    Array [
+      Object {
+        "color": "#293241",
+        "fontSize": 16,
+        "fontWeight": "bold",
+      },
+    ]
+  }
+>
+  Heading h4
+</Text>
+`;

@@ -1,24 +1,45 @@
 import { StatusBar } from "expo-status-bar"
 import React from "react"
-import { StyleSheet, Text, View } from "react-native"
-import { Button } from "./src/components"
+import { StyleSheet, View, Alert } from "react-native"
+import { Button, Heading } from "./src/components"
 
 export default function App() {
+  const onPress = () =>
+    Alert.alert(
+      "Alert Title",
+      "My Alert Msg",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel",
+        },
+        {
+          text: "Ask me later",
+          onPress: () => console.log("Ask me later pressed"),
+        },
+
+        { text: "OK", onPress: () => console.log("OK Pressed") },
+      ],
+      { cancelable: true }
+    )
+
   return (
     <View style={styles.container}>
       <View style={styles.box}>
-        <Button variant='outline' colour='dark'>
+        <Button
+          onPress={onPress}
+          variant='outline'
+          colour='dark'
+        >
           I'm pressable
         </Button>
       </View>
       <View style={styles.box}>
-        <Button variant='outline'>I'm pressable</Button>
-      </View>
-      <View style={styles.box}>
-        <Button colour='dark'>I'm pressable</Button>
-      </View>
-      <View style={styles.box}>
-        <Button>I'm pressable</Button>
+        <Heading level='h1'>Heading h1</Heading>
+        <Heading level='h2'>Heading h2</Heading>
+        <Heading level='h3'>Heading h3</Heading>
+        <Heading level='h4'>Heading h4</Heading>
       </View>
       <StatusBar style='auto' />
     </View>
@@ -34,10 +55,10 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   box: {
-    width: "60%",
+    width: "80%",
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    padding: 10,
+    paddingVertical: 10,
   },
 })
