@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar"
 import React from "react"
 import { StyleSheet, View, Alert } from "react-native"
-import { Button, Heading } from "./src/components"
+import { Button, Heading, Paragraph } from "./src/components"
 
 export default function App() {
   const onPress = () =>
@@ -37,10 +37,14 @@ export default function App() {
       </View>
       <View style={styles.box}>
         <Heading level='h1'>Heading h1</Heading>
-        <Heading level='h2'>Heading h2</Heading>
-        <Heading level='h3'>Heading h3</Heading>
-        <Heading level='h4'>Heading h4</Heading>
       </View>
+      <View style={{ width: "90%" }}>
+        <Paragraph>
+          This is some paragraph text at size medium. By default
+          it is left aligned.
+        </Paragraph>
+      </View>
+
       <StatusBar style='auto' />
     </View>
   )

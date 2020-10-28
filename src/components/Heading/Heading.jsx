@@ -5,7 +5,6 @@ import { gunmetal } from "../../styles/colors"
 import { useWindowDimensions, Platform } from 'react-native'
 
 
-
 const Heading = ({ children, level }) => {
   const windowWidth = useWindowDimensions().width
   const getFontSize = ({ level }) => {
@@ -36,8 +35,11 @@ const Heading = ({ children, level }) => {
       fontWeight: "bold",
       color: gunmetal,
     })
+
   return <StyledText level={level}>{children}</StyledText>
 }
+
+
 Heading.propTypes = {
   /**
    * The visual level of the heading.

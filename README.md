@@ -6,6 +6,12 @@ This repo is a WIP 🔨 cross-platform native application/progressive web app ma
 
 - Aiming to keep track of technical decisions/things I learn along the way here
 
+### 10/28/2020 🍁
+
+- Built `Heading` and `Paragraph` components using `styled-componets`
+- With `Heading`, because the font size relies on the hook `useWindowDimensions` (no media queries in RN), the styled component has to be declared within the functional component, and not outside it as is usually preferred...might need to read up on this but of course a hook can only be called within a functional component so I see no way around right now..interestingly this would be the same for StyleSheets and those `react-native-web-hooks` I think, would be good to find an exmaple and confirm
+- Will move onto card next, and start looking into expo and fonts
+
 ### 10/27/2020 🍁
 
 - Tried refactoring with `styled components` but some of the functionality was lost when it came to the hooks from react-native-web-hooks (which I am using to create pseudo class styles for the buttons when on web), their examples use the `StyleSheet API` and I suspect the `useHover` ect. are not working properly with the `styled components`, the state is not being updated somehow...or maybe I am passing things in the wrong way...will mull it over

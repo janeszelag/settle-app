@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Paragraph /> renders at large size 1`] = `
+<Text
+  align="left"
+  bold={false}
+  size="large"
+  style={
+    Array [
+      Object {
+        "fontSize": 18,
+        "fontWeight": "normal",
+        "textAlign": "left",
+      },
+    ]
+  }
+>
+  Paragraph
+</Text>
+`;
+
+exports[`<Paragraph /> renders at medium size 1`] = `
+<Text
+  align="left"
+  bold={false}
+  size="medium"
+  style={
+    Array [
+      Object {
+        "fontSize": 16,
+        "fontWeight": "normal",
+        "textAlign": "left",
+      },
+    ]
+  }
+>
+  Paragraph
+</Text>
+`;
+
+exports[`<Paragraph /> renders at small size 1`] = `
+<Text
+  align="left"
+  bold={false}
+  size="medium"
+  style={
+    Array [
+      Object {
+        "fontSize": 16,
+        "fontWeight": "normal",
+        "textAlign": "left",
+      },
+    ]
+  }
+>
+  Paragraph
+</Text>
+`;
+
+exports[`<Paragraph /> renders medium and bold 1`] = `
+<Text
+  align="left"
+  bold={true}
+  size="medium"
+  style={
+    Array [
+      Object {
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "textAlign": "left",
+      },
+    ]
+  }
+>
+  Paragraph
+</Text>
+`;
