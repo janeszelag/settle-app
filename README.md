@@ -6,6 +6,10 @@ This repo is a WIP 🔨 cross-platform native application/progressive web app ma
 
 - Aiming to keep track of technical decisions/things I learn along the way here
 
+### 10/30/2020 🍁
+
+- Built `Card` component, only two three variants currently but I can add more
+
 ### 10/28/2020 🍁
 
 - Built `Heading` and `Paragraph` components using `styled-componets`

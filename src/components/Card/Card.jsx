@@ -2,12 +2,9 @@ import React from "react"
 import { View, StyleSheet, Platform, useWindowDimensions } from 'react-native'
 import PropTypes from "prop-types"
 import {
-  gunmetal,
   white,
-  cedarChest,
   lightCedarChest,
   lightGunmetal,
-  darkCedarChest,
   grey
 } from '../../styles/colors'
 
