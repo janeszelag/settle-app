@@ -7,8 +7,19 @@ const fontSizes = {
   medium: 16,
   large: 18
 }
+const lineHeights = {
+  small: 20,
+  medium: 22,
+  large: 24
+}
 
-const paragraphSize = ({ size }) => ({ fontSize: fontSizes[size] })
+const letterSpacings = {
+  small: -0.3,
+  medium: -0.5,
+  large: -0.7
+}
+
+const paragraphSize = ({ size }) => ({ fontSize: fontSizes[size], letterSpacing: letterSpacings[size], lineHeight: lineHeights[size] })
 const paragraphAlign = ({ align }) => ({ textAlign: align })
 const StyledText = styled.Text(
   paragraphSize,

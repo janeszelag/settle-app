@@ -16,3 +16,5 @@ export const darkCedarChest = "#ad4631"
 export const cedarChest = "#c8553d"
 
 export const white = "#ffffff"
+
+export const grey = "#d8d8d8"
