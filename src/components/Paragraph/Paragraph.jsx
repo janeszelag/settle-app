@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components/native"
 import PropTypes from "prop-types"
+import { darkCedarChest, gunmetal, white } from '../../styles/colors'
 
 const fontSizes = {
   small: 14,
@@ -8,9 +9,9 @@ const fontSizes = {
   large: 18
 }
 const lineHeights = {
-  small: 20,
-  medium: 22,
-  large: 24
+  small: '20px',
+  medium: '22px',
+  large: '24px'
 }
 
 const letterSpacings = {
@@ -19,11 +20,22 @@ const letterSpacings = {
   large: -0.7
 }
 
+const fontColors = {
+  'default': gunmetal,
+  'darkOrange': darkCedarChest,
+  'white': white
+}
+
 const paragraphSize = ({ size }) => ({ fontSize: fontSizes[size], letterSpacing: letterSpacings[size], lineHeight: lineHeights[size] })
 const paragraphAlign = ({ align }) => ({ textAlign: align })
 const StyledText = styled.Text(
   paragraphSize,
   paragraphAlign,
+  ({ colour }) => {
+    return {
+      color: fontColors[colour]
+    }
+  },
   ({ bold }) => {
     return {
       fontWeight: bold ? 'bold' : 'normal'
@@ -31,17 +43,17 @@ const StyledText = styled.Text(
   }
 )
 
-const Paragraph = ({ bold, align, size, children }) => {
-
+const Paragraph = ({ children, ...props }) => {
 
   return (
-    <StyledText size={size} bold={bold} align={align}>
+    <StyledText {...props}>
       {children}
     </StyledText>
   )
 }
 
 Paragraph.propTypes = {
+  colour: PropTypes.oneOf(['default', 'darkOrange', 'white']),
   /**
    * Embolden paragraph text without conveying any special importance or relevance.
    */
@@ -64,6 +76,7 @@ Paragraph.defaultProps = {
   bold: false,
   size: 'medium',
   align: 'left',
+  colour: 'default'
 }
 
 export default Paragraph

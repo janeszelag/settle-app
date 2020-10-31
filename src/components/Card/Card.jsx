@@ -5,10 +5,16 @@ import {
   white,
   lightCedarChest,
   lightGunmetal,
+  unbleachedSilk,
   grey
 } from '../../styles/colors'
 
-
+const backgroundColors = {
+  'default': white,
+  'blue': lightGunmetal,
+  'orange': lightCedarChest,
+  'pink': unbleachedSilk
+}
 
 const getShadowStyles = (variant) => {
   if (variant !== 'default') return
@@ -33,7 +39,7 @@ const Card = ({ variant, children, fullHeight }) => {
       width: '100%',
       paddingVertical: windowWidth >= 764 ? 32 : 24,
       paddingHorizontal: windowWidth >= 764 ? 24 : 18,
-      backgroundColor: variant === 'default' ? white : variant === 'blue' ? lightGunmetal : lightCedarChest,
+      backgroundColor: backgroundColors[variant],
       borderRadius: 6,
       height: fullHeight ? '100%' : undefined
     }
@@ -52,7 +58,7 @@ Card.propTypes = {
   /**
    * The style.
    */
-  variant: PropTypes.oneOf(['default', 'blue', 'orange']),/**
+  variant: PropTypes.oneOf(['default', 'blue', 'orange', 'pink']),/**
   * Sets the `Card`'s `height` equal to its parent.
   */
   fullHeight: PropTypes.bool,
