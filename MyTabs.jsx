@@ -12,26 +12,29 @@ import {
 import {
   white,
   gunmetal,
-  unbleachedSilk
+  unbleachedSilk,
+  darkCedarChest,
+  cedarChest,
+  grey, lightGunmetal
 } from './src/styles/colors'
 
 function HomeScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.box}>
-        <Card variant='pink'>
-          <Paragraph>Home!</Paragraph>
-          <Button colour='dark'>I'm pressable</Button>
+        <Card>
+          <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <Button colour='dark'>I'm pressable</Button>
+            <View style={{ padding: 10 }} />
+            <Button colour='orange' variant='outline'>I'm pressable</Button>
+            <Heading level='h1'>Heading h1</Heading>
+            <View style={{ padding: 10 }} />
+            <Paragraph>
+              This is some paragraph text at size medium. By default
+              it is left aligned.
+            </Paragraph>
+          </View>
         </Card>
-      </View>
-      <View style={styles.box}>
-        <Heading level='h1'>Heading h1</Heading>
-      </View>
-      <View style={{ width: "90%" }}>
-        <Paragraph>
-          This is some paragraph text at size medium. By default
-          it is left aligned.
-        </Paragraph>
       </View>
     </View>
   )
@@ -76,7 +79,11 @@ function MyTabs() {
         inactiveTintColor: Platform.OS === 'web' ? gunmetal : white,
         activeBackgroundColor: gunmetal,
         inactiveBackgroundColor: gunmetal,
-        showLabel: Platform.OS === 'web' ? true : false
+        showLabel: Platform.OS === 'web' ? true : false,
+        showIcon: true,
+        tabStyle: Platform.OS === 'web' ? { flexDirection: 'row-reverse' } : undefined,
+        style: Platform.OS === 'web' ? { backgroundColor: white } : undefined
+
       }}
     >
       <Tab.Screen
@@ -88,11 +95,12 @@ function MyTabs() {
             <MaterialCommunityIcons
               name='home-variant'
               color={color}
-              size={size}
+              size={Platform.OS === 'web' ? 24 : size}
             />
           ),
         }}
       />
+
       <Tab.Screen
         name='Profile'
         component={ProfileScreen}
@@ -100,9 +108,9 @@ function MyTabs() {
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
-              name='account-outline'
+              name='account'
               color={color}
-              size={size}
+              size={Platform.OS === 'web' ? 24 : size}
             />
           )
         }}
@@ -116,7 +124,7 @@ function MyTabs() {
             <MaterialCommunityIcons
               name='cactus'
               color={color}
-              size={size}
+              size={Platform.OS === 'web' ? 24 : size}
             />
           ),
         }}
@@ -128,17 +136,17 @@ function MyTabs() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: lightGunmetal,
     alignItems: "center",
     justifyContent: "center",
     padding: 10,
   },
   box: {
     width: "90%",
-    backgroundColor: "#fff",
+
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 10,
+
   },
 })
 

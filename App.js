@@ -6,9 +6,16 @@ import { StyleSheet, View, Platform } from "react-native"
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <MyTabs />
-      <StatusBar style='auto' />
-    </NavigationContainer>
+    <>
+      {Platform.OS !== "web" && (
+        <View
+          style={{ backgroundColor: "#293241", height: 25 }}
+        />
+      )}
+      <NavigationContainer>
+        <MyTabs />
+        <StatusBar style='auto' />
+      </NavigationContainer>
+    </>
   )
 }
