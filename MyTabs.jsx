@@ -1,8 +1,7 @@
 import React from "react"
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import { StyleSheet, View, Platform } from "react-native"
+import { StyleSheet, View, Platform, useWindowDimensions } from "react-native"
 import {
   Button,
   Heading,
@@ -15,21 +14,25 @@ import {
   unbleachedSilk,
   darkCedarChest,
   cedarChest,
-  grey, lightGunmetal
+  grey,
+  lightGunmetal,
+  lightGrey, steelTeal, cadmiumOrange, lightTeal
 } from './src/styles/colors'
 
 function HomeScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.box}>
-        <Card>
+        <Card variant='teal'>
           <View style={{ justifyContent: 'center', alignItems: 'center' }}>
             <Button colour='dark'>I'm pressable</Button>
             <View style={{ padding: 10 }} />
-            <Button colour='orange' variant='outline'>I'm pressable</Button>
-            <Heading level='h1'>Heading h1</Heading>
-            <View style={{ padding: 10 }} />
+            <Button colour='orange' >I'm pressable</Button>
+
           </View>
+          <View style={{ padding: 10 }} />
+          <Heading level='h1'>Heading h1</Heading>
+          <View style={{ padding: 10 }} />
           <Paragraph>
             This is some paragraph text at size medium. By default
             it is left aligned.
@@ -54,6 +57,20 @@ function ProfileScreen() {
   )
 }
 
+function ProgressScreen() {
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Paragraph>This will be your progress.</Paragraph>
+    </View>
+  )
+}
+
 function AboutScreen() {
   return (
     <View
@@ -68,21 +85,26 @@ function AboutScreen() {
   )
 }
 
-const Tab = Platform.OS === 'web' ? createMaterialTopTabNavigator() : createBottomTabNavigator()
+const Tab = createMaterialTopTabNavigator()
 
 function MyTabs() {
+
+  const windowWidth = useWindowDimensions().width
   return (
     <Tab.Navigator
-      initialRouteName='Feed'
+      initialRouteName='Home'
+      tabBarPosition={Platform.OS !== 'web' ? 'bottom' : 'top'}
       tabBarOptions={{
-        activeTintColor: Platform.OS === 'web' ? gunmetal : unbleachedSilk,
-        inactiveTintColor: Platform.OS === 'web' ? gunmetal : white,
+        activeTintColor: '#b2cece',
+        inactiveTintColor: white,
         activeBackgroundColor: gunmetal,
         inactiveBackgroundColor: gunmetal,
-        showLabel: Platform.OS === 'web' ? true : false,
+        showLabel: Platform.OS === 'web' && windowWidth >= 764 ? true : false,
+        labelStyle: { textTransform: 'none', fontSize: 16 },
         showIcon: true,
-        tabStyle: Platform.OS === 'web' ? { flexDirection: 'row-reverse' } : undefined,
-        style: Platform.OS === 'web' ? { backgroundColor: white } : undefined
+        indicatorStyle: { backgroundColor: steelTeal, height: Platform.OS === 'web' ? 4 : 0 },
+        tabStyle: Platform.OS === 'web' ? { flexDirection: 'row' } : undefined,
+        style: { backgroundColor: gunmetal }
 
       }}
     >
@@ -91,26 +113,40 @@ function MyTabs() {
         component={HomeScreen}
         options={{
           tabBarLabel: "Home",
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
               name='home-variant'
               color={color}
-              size={Platform.OS === 'web' ? 24 : size}
+              size={Platform.OS === 'web' ? 20 : 24}
             />
           ),
         }}
       />
 
       <Tab.Screen
+        name='Progress'
+        component={ProgressScreen}
+        options={{
+          tabBarLabel: "My Progress",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons
+              name='google-analytics'
+              color={color}
+              size={Platform.OS === 'web' ? 20 : 24}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
         name='Profile'
         component={ProfileScreen}
         options={{
           tabBarLabel: "Profile",
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
               name='account'
               color={color}
-              size={Platform.OS === 'web' ? 24 : size}
+              size={Platform.OS === 'web' ? 20 : 24}
             />
           )
         }}
@@ -120,11 +156,11 @@ function MyTabs() {
         component={AboutScreen}
         options={{
           tabBarLabel: "About",
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
               name='cactus'
               color={color}
-              size={Platform.OS === 'web' ? 24 : size}
+              size={Platform.OS === 'web' ? 20 : 24}
             />
           ),
         }}
@@ -136,10 +172,11 @@ function MyTabs() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: lightGunmetal,
+    backgroundColor: white,
     alignItems: "center",
     justifyContent: "center",
     padding: 10,
+    width: '100%'
   },
   box: {
     width: "90%",

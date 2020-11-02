@@ -1,5 +1,7 @@
 // grey teal
 export const steelTeal = "#588b8b"
+// light teal
+export const lightTeal = "#e2eded"
 // dark grey blue
 export const gunmetal = "#293241"
 // gun metal background
@@ -18,3 +20,5 @@ export const cedarChest = "#c8553d"
 export const white = "#ffffff"
 
 export const grey = "#d8d8d8"
+
+export const lightGrey = "#f8f8f8"

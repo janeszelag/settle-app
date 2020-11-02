@@ -6,14 +6,16 @@ import {
   lightCedarChest,
   lightGunmetal,
   unbleachedSilk,
-  grey
+  grey,
+  lightTeal
 } from '../../styles/colors'
 
 const backgroundColors = {
   'default': white,
   'blue': lightGunmetal,
   'orange': lightCedarChest,
-  'pink': unbleachedSilk
+  'pink': unbleachedSilk,
+  'teal': lightTeal
 }
 
 const getShadowStyles = (variant) => {
@@ -58,7 +60,7 @@ Card.propTypes = {
   /**
    * The style.
    */
-  variant: PropTypes.oneOf(['default', 'blue', 'orange', 'pink']),/**
+  variant: PropTypes.oneOf(['default', 'blue', 'orange', 'pink', 'teal']),/**
   * Sets the `Card`'s `height` equal to its parent.
   */
   fullHeight: PropTypes.bool,
