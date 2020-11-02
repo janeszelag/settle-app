@@ -6,9 +6,18 @@ This repo is a WIP 🔨 cross-platform native application/progressive web app ma
 
 - Aiming to keep track of technical decisions/things I learn along the way here
 
-### 10/30/2020 🍁
+### 11/02/2020 🍂
 
-- Built `Card` component, only two three variants currently but I can add more
+- Built `Card` component, only three variants currently but I can add more
+- Chose to go with react-navigation for routing, the web support is experimental but so far it's working
+- For iOS and android there is a bottom nav made with `createBottomTabNavigator`, great thing about expo is it comes with `react-native-vector-icons`, allows me to use the `MaterialCommunityIcons` for my nav bars (and elsewhere in the project, may have to source more unique icons for some of my pages though)
+- For web there is a top nav made with `createMaterialTopTabNavigator` because a bottom nav looked weird, the cool thing is, they use the same code 💥, depending on the platform I just define the `TabNavigator` as either bottom or MaterialTop
+- I need to play around with the animations in web though bc right now its a little much
+- I plan to have a `StackNavigator` within the `HomeScreen` with the different pages for meditations, workthroughs, thinking traps, what is test anxiety, and another `StackNavigator` within the `ProfileScreen` for the progress stuff, settings, profile info and log out options.....will keep working on this now to set up these routes and see how the `back` functionality works
+- Need to research authentication flows and how that works in a native app
+- I think I will make some fixtures of dummy data and build the UI that way before making any data calls anyway so I think authentication will be at the very end but it's good I start learning about it now
+- I plan to do the static pages first, I will probably want some kind of `expand-collapse component`, I don't know yet if I should build that myself....most likely I will go with a library (maybe UI-kittens)
+- Also need to look at responsive RN libraries, I could build my own `box` for sure but I don't think I want to build my own `flex-grid` type of component (I can always go back and make my own to practise)
 
 ### 10/28/2020 🍁
 

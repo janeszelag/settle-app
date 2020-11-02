@@ -29,11 +29,11 @@ function HomeScreen() {
             <Button colour='orange' variant='outline'>I'm pressable</Button>
             <Heading level='h1'>Heading h1</Heading>
             <View style={{ padding: 10 }} />
-            <Paragraph>
-              This is some paragraph text at size medium. By default
-              it is left aligned.
-            </Paragraph>
           </View>
+          <Paragraph>
+            This is some paragraph text at size medium. By default
+            it is left aligned.
+            </Paragraph>
         </Card>
       </View>
     </View>
