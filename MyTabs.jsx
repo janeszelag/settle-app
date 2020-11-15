@@ -95,7 +95,7 @@ function MyTabs() {
       initialRouteName='Home'
       tabBarPosition={Platform.OS !== 'web' ? 'bottom' : 'top'}
       tabBarOptions={{
-        activeTintColor: '#b2cece',
+        activeTintColor: '#b9eeee',
         inactiveTintColor: white,
         activeBackgroundColor: gunmetal,
         inactiveBackgroundColor: gunmetal,
